@@ -1,0 +1,17 @@
+body{
+    height: 100vh;
+    font-family: "myFont";
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff2') format('woff2'), url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff') format('woff');
+}
+
+
+ul li{
+    font-family: "myFont";
+    font-size: 7rem;
+}
+
+
