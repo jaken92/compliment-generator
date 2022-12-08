@@ -1,17 +1,37 @@
-body{
-    height: 100vh;
-    font-family: "myFont";
+body {
+  height: 100vh;
+  font-family: 'myFont';
 }
 
 @font-face {
-    font-family: "myFont";
-    src: url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff2') format('woff2'), url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff') format('woff');
+  font-family: 'myFont';
+  src: url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff2') format('woff2'),
+    url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff') format('woff');
 }
 
-
-ul li{
-    font-family: "myFont";
-    font-size: 7rem;
+body {
+  height: 200vh;
+  transition: background-color 1.5s ease;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  list-style-type: none;
+  padding: 500px 0rem 200px 0rem;
 }
 
+ul li {
+  font-family: 'myFont';
+  font-size: 4rem;
+}
 
+.selected {
+  background-color: aqua;
+}
+
+.blue {
+  background-color: blue;
+}
