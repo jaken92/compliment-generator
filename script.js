@@ -1,7 +1,8 @@
 const listItems = document.querySelectorAll('ul li');
-const list = document.querySelector('ul');
+const list = document.querySelector('.myList');
 const body = document.querySelector('body');
 const selected = document.querySelector('.selected');
+const root = document.querySelector(':root');
 
 const compliments = [
   'Nice',
@@ -41,6 +42,30 @@ const preliments = [
   'Incredibly',
 ];
 
+const colors = [
+  'hotpink',
+  'rgb(255, 127, 208)',
+  'rgb(29, 141, 44)',
+  'rgb(181, 86, 35)',
+  'rgb(181, 35, 159)',
+  'rgb(89, 79, 226)',
+  'rgb(13, 226, 91)',
+  'rgb(226, 13, 13)',
+  'rgb(13, 118, 62)',
+  'blue',
+];
+
+function rainbow() {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  root.style.setProperty('--rainbow', randomColor);
+}
+
+function createChild() {
+  const newLi = document.createElement('li');
+  newLi.textContent = preliments[Math.floor(Math.random() * preliments.length)];
+  list.appendChild('newLi');
+}
+
 body.addEventListener('click', function () {
   listItems.forEach(function (listItem, i) {
     listItem.textContent =
@@ -67,7 +92,8 @@ window.addEventListener('scroll', function () {
         list.children[i].classList.remove('selected');
       }
       listItem.classList.add('selected');
-      body.style.background = 'blue';
+      //body.style.background = 'blue';
+      rainbow();
     }
   });
 });
