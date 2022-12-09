@@ -18,10 +18,10 @@ const compliments = [
   'Sexy',
   'Fabulous',
   'Awesome',
-  'Shiny',
+  'Sophisticated',
   'Fantastic',
   'Cool',
-  'Down with the kids',
+  'Tough',
 ];
 
 const preliments = [
