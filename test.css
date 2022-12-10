@@ -1,0 +1,38 @@
+:root {
+  --rainbow: rgb(232, 20, 154);
+  --pink: rgb(13, 118, 62);
+}
+
+body {
+  height: 100vh;
+  font-family: 'myFont';
+  background-color: var(--rainbow);
+  xtransition: background-color 1.3s ease;
+}
+
+.myList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  list-style-type: none;
+  padding: 500px 0rem 500px 0rem;
+}
+
+@font-face {
+  font-family: 'myFont';
+  src: url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff2') format('woff2'),
+    url('./font/Rubik_Microbe/RubikMicrobe-Regular.woff') format('woff');
+}
+
+ul li {
+  font-family: 'myFont';
+  font-size: 4rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.selected {
+  background-color: aqua;
+}

@@ -1,4 +1,4 @@
-const listItems = document.querySelectorAll('.list-items');
+const listItems = document.querySelectorAll('ul li');
 const list = document.querySelector('.myList');
 const body = document.querySelector('body');
 const selected = document.querySelector('.selected');
@@ -60,17 +60,13 @@ function rainbow() {
   root.style.setProperty('--rainbow', randomColor);
 }
 
-// function createChild() {
-//   const newLi = document.createElement('li');
-//   newLi.textContent = preliments[Math.floor(Math.random() * preliments.length)];
-//   list.appendChild('newLi');
-// }
+function createChild() {
+  const newLi = document.createElement('li');
+  newLi.textContent = preliments[Math.floor(Math.random() * preliments.length)];
+  list.appendChild('newLi');
+}
 
 body.addEventListener('click', function () {
-  const newLi = document.createElement('li');
-  const listItems = document.querySelectorAll('.list-items');
-  newLi.classList.add('list-items');
-  list.appendChild(newLi);
   listItems.forEach(function (listItem, i) {
     listItem.textContent =
       preliments[Math.floor(Math.random() * preliments.length)] +
@@ -82,10 +78,6 @@ const windowHeight = window.innerHeight;
 
 window.addEventListener('scroll', function () {
   const scroll = window.scrollY;
-  // const newLi = document.createElement('li');
-  // newLi.textContent =
-  // preliments[Math.floor(Math.random() * preliments.length)] +
-  // ` ${compliments[Math.floor(Math.random() * compliments.length)]}`;
   listItems.forEach(function (listItem, i) {
     if (scroll > listItem.offsetTop - windowHeight * 0.55) {
       for (i = 0; i < list.children.length; i++) {
