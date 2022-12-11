@@ -58,7 +58,8 @@ const colors = [
 cheerButton.addEventListener('click', function () {
   body.classList.add('rainbow');
   const header = document.createElement('h2');
-  header.textContent = 'You are: ';
+  header.textContent = 'Hang in there champion! You are: ';
+  body.classList.add('heart-cursor');
   myList.prepend(header);
   for (i = 0; i < 5; i++) {
     const li = document.createElement('li');
