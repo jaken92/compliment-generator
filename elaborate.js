@@ -57,10 +57,13 @@ const colors = [
 //creating the initial 5 listitems upon buttonclick.
 cheerButton.addEventListener('click', function () {
   body.classList.add('rainbow');
+  const headerPtTwo = document.createElement('h2');
+  headerPtTwo.textContent = 'You are:';
+  myList.prepend(headerPtTwo);
   const header = document.createElement('h2');
-  header.textContent = 'Hang in there champion! You are: ';
-  body.classList.add('heart-cursor');
+  header.textContent = 'Hang in there champion!';
   myList.prepend(header);
+  body.classList.add('heart-cursor');
   for (i = 0; i < 5; i++) {
     const li = document.createElement('li');
     console.log('element created');
@@ -81,14 +84,14 @@ const rainbow = window.setInterval(function () {
 //   const randomColor = colors[Math.floor(Math.random() * colors.length)];
 //   root.style.setProperty('--rainbow', randomColor);
 // }
-
+//documentHeight - totalAmountScrolled <= documentHeight * 0.25
 const windowHeight = window.innerHeight;
 //https://medium.com/@clergemarvin/scrolling-event-in-javascript-c892f6b6bd9b
 window.addEventListener('scroll', function () {
   const scrollOffset = window.pageYOffset;
   const totalAmountScrolled = scrollOffset + windowHeight;
   const documentHeight = document.body.clientHeight;
-  console.log(documentHeight);
+  console.log(totalAmountScrolled);
   //console.log(scroll.offsetTop);
   if (documentHeight - totalAmountScrolled <= documentHeight * 0.25) {
     const li = document.createElement('li');
