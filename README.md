@@ -1,10 +1,10 @@
 # My useless webpage
 
-A simple compliment generator. Playing around with different javascript functions to learn. The result is pretty useless webpage.
+A simple compliment generator. Playing around with different javascript functions to learn. The result is a pretty useless webpage.
 
 # Installation
 
-Save the files to your computer and fire up a liveserver. Or follow this link to acces it online:
+Save the files to your computer and fire up a liveserver. Or follow this link to acces it online: https://fantastic-biscotti-07387e.netlify.app/
 
 # Code Review
 
