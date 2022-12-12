@@ -22,6 +22,13 @@ const compliments = [
   'Fantastic',
   'Cool',
   'Tough',
+  'Affectionate',
+  'Adventurous',
+  'Compassionate',
+  'Courageous',
+  'Generous',
+  'Reliable',
+  'Resourceful',
 ];
 
 const preliments = [
@@ -36,9 +43,15 @@ const preliments = [
   'Neatly',
   'Properly',
   'Rediculously',
-  'Truthfully',
-  'Viciously',
+  'Truly',
+  'Aggressively',
+  'Insanely',
   'Incredibly',
+  'Remarkably',
+  'Undoubtedly',
+  'Fantastically',
+  'Immensely',
+  'Magically',
 ];
 
 const colors = [
@@ -65,7 +78,7 @@ function addFive() {
     myList.appendChild(li);
   }
 }
-//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none. 
+//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none.
 cheerButton.addEventListener('click', function () {
   body.classList.add('rainbow');
   const headerPtTwo = document.createElement('h2');
