@@ -1,12 +1,10 @@
-INSERT MANDATORY GIF
+# My useless webpage
 
-# Project Title
-
-Text about the project. This would also be a great place to link the game on Netlify.
+A simple compliment generator. Playing around with different javascript functions to learn. The result is pretty useless webpage.
 
 # Installation
 
-Add the installation instructions.
+Save the files to your computer and fire up a liveserver. Or follow this link to acces it online:
 
 # Code Review
 
