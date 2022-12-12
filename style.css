@@ -129,6 +129,10 @@ ul li {
     padding: 1.5rem;
   }
 
+  .sad-emoji {
+    height: 4rem;
+  }
+
   ul {
     gap: 7rem;
   }
