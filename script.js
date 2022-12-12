@@ -1,8 +1,7 @@
-const listItems = document.querySelectorAll('.list-items');
-const list = document.querySelector('.myList');
 const body = document.querySelector('body');
-const selected = document.querySelector('.selected');
+const myList = document.querySelector('.myList');
 const root = document.querySelector(':root');
+const cheerButton = document.querySelector('.cheer-button');
 
 const compliments = [
   'Nice',
@@ -55,130 +54,67 @@ const colors = [
   'blue',
 ];
 
-function rainbow() {
-  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-  root.style.setProperty('--rainbow', randomColor);
-}
-
-// function createChild() {
-//   const newLi = document.createElement('li');
-//   newLi.textContent = preliments[Math.floor(Math.random() * preliments.length)];
-//   list.appendChild('newLi');
-// }
-
-body.addEventListener('click', function () {
-  const newLi = document.createElement('li');
-  const listItems = document.querySelectorAll('.list-items');
-  newLi.classList.add('list-items');
-  list.appendChild(newLi);
-  listItems.forEach(function (listItem, i) {
-    listItem.textContent =
+// Function appending five listelements to myList, randoming their textcontent from preliments and compliments array.
+function addFive() {
+  for (i = 0; i < 5; i++) {
+    const li = document.createElement('li');
+    console.log('element created');
+    li.textContent =
       preliments[Math.floor(Math.random() * preliments.length)] +
       ` ${compliments[Math.floor(Math.random() * compliments.length)]}`;
-  });
-});
-
-const windowHeight = window.innerHeight;
-
-window.addEventListener('scroll', function () {
-  const scroll = window.scrollY;
-  // const newLi = document.createElement('li');
-  // newLi.textContent =
-  // preliments[Math.floor(Math.random() * preliments.length)] +
-  // ` ${compliments[Math.floor(Math.random() * compliments.length)]}`;
-  listItems.forEach(function (listItem, i) {
-    if (scroll > listItem.offsetTop - windowHeight * 0.55) {
-      for (i = 0; i < list.children.length; i++) {
-        list.children[i].classList.remove('selected');
-      }
-      listItem.classList.add('selected');
-      //body.style.background = 'blue';
-      rainbow();
-    }
-  });
-});
-
-// selected.addEventListener('scroll', function () {
-//   const scrollposs = selected.scrollTop;
-//   console.log(scrollposs);
-// });
-
-// window.addEventListener('scroll', function () {
-//   console.log(window.pageYOffset);
-// });
-
-// window.onscroll = function() {myFunction()};
-
-// function myFunction() {
-//   if (document.documentElement.scrollTop > window.height / 2) {
-//     document.getElementById("").className = "test";
-//   } else {
-//     document.getElementById("myP").className = "";
-//   }
-// }
-/*working ex
-
-body.addEventListener('click', function () {
-  listItems.forEach(function (listItem, i) {
-    listItem.textContent =
-      compliments[Math.floor(Math.random() * compliments.length)];
-  });
-  listItems[1].textContent += ` ${
-    compliments[Math.floor(Math.random() * compliments.length)]
-  }`;
-});
-*/
-
-/*
-element.addEventListener("click", function() {
-    document.getElementById("demo").innerHTML = "Hello World";
-  });
-
-  const randomElement = array[Math.floor(Math.random() * array.length)];
-
-
-
-
-body.addEventListener('scroll', function () {
-  const scrollTop = body.scrollTop;
-  listItems.forEach(function (listItem, i) {
-    if (listItem.offsetTop < scrollTop + body.offsetHeight / 2) {
-      list.children[i].classList.add('selected');
-    }
-  });
-});
-
-
-/*
-//inspo: https://www.youtube.com/watch?v=FDCiM6JoPao&t=47s
-// https://stackoverflow.com/questions/2481350/how-can-i-get-the-scrollbar-position-with-javascript
-
-const items = document.querySelectorAll('.items');
-const scrollMenu = document.querySelector('.scrollmenu');
-const indicators = document.querySelector('.indicators');
-
-//removing the class .selected from all li elements when called.
-function removeSelected() {
-  for (i = 0; i < indicators.children.length; i++) {
-    indicators.children[i].classList.remove('selected');
+    myList.appendChild(li);
   }
 }
+//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none. 
+cheerButton.addEventListener('click', function () {
+  body.classList.add('rainbow');
+  const headerPtTwo = document.createElement('h2');
+  headerPtTwo.textContent = 'You are:';
+  myList.prepend(headerPtTwo);
+  const header = document.createElement('h2');
+  header.textContent = 'Hang in there champion!';
+  myList.prepend(header);
+  body.classList.add('heart-cursor');
+  addFive();
+  cheerButton.classList.add('hide');
+});
 
-//adding eventlistener for the scrollMenu window.
-scrollMenu.addEventListener('scroll', function () {
-  const scrollLeft = scrollMenu.scrollLeft;
-  //for each item, if their left side pos is less than half of the scrollmenus width away from the left side, the .selected class is removed from all li elements and added only to the item meeting those conditions.
-  items.forEach(function (item, i) {
-    if (
-      //offsetLeft property returns the left position (in pixels) relative to the parent.
-      //offsetWidth returns the layout width of an element as an integer.
-      //scrollLeft gets the number of pixels that an element's content is scrolled from its left edge.
-      item.offsetLeft <
-      scrollLeft + scrollMenu.offsetWidth / 2
-    ) {
-      removeSelected();
-      indicators.children[i].classList.add('selected');
+//Changing the color of the css variable --rainbow. A color is randomed and applied from the colors array every 2seconds.
+const rainbow = window.setInterval(function () {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  root.style.setProperty('--rainbow', randomColor);
+}, 2000);
+
+//Making the page endlessly scrollable.
+window.addEventListener('scroll', function () {
+  const html = document.documentElement;
+  //getting the document height, reference: https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
+  const documentHeight = Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  );
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  //if the windowheight+scrolled amount equals 85% or more of the documents total height, addFive is called.
+  if (windowHeight + scrollY >= 0.85 * documentHeight) {
+    addFive();
+  }
+});
+
+//checking where in the browser each of the listitems are located, if an item is 59% from the top, applying class selected and removing it from the other listitems.
+window.addEventListener('scroll', function () {
+  const windowHeight = window.innerHeight;
+  const scrollY = window.scrollY;
+  const listItems = document.querySelectorAll('ul li');
+  listItems.forEach(function (listItem, i) {
+    if (scrollY > listItem.offsetTop - windowHeight * 0.59) {
+      for (i = 0; i < myList.children.length; i++) {
+        myList.children[i].classList.remove('selected');
+      }
+      listItem.classList.add('selected');
     }
   });
 });
-*/
