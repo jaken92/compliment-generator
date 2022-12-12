@@ -1,7 +1,7 @@
 :root {
   --rainbow: rgb(232, 20, 154);
   --pink: rgb(238, 56, 193);
-  --black: rgb(0, 0, 0);
+  --black: #000000;
   --yellow: #ffff00;
   box-sizing: border-box;
   margin: 0px;

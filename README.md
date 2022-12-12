@@ -5,7 +5,7 @@ A simple compliment generator. Playing around with different javascript function
 # Installation
 
 Save the files to your computer and fire up a liveserver. Or follow this link to acces it online: https://cheeryouup.netlify.app
-ß
+
 # Code Review
 
 1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
