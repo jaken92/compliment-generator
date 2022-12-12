@@ -30,6 +30,7 @@ body {
   height: 95vh;
   margin: 0px;
   padding: 0px;
+  font-weight: 600;
   cursor: url('images/kindpng_44339\ 1.png'),
     url('images/facebook-love-png-44001\ 1.png'), auto;
 }
