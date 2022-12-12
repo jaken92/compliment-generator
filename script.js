@@ -78,7 +78,7 @@ function addFive() {
     myList.appendChild(li);
   }
 }
-//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none.
+//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none. Plays audio which is set to loop.
 cheerButton.addEventListener('click', function () {
   body.classList.add('rainbow');
   const headerPtTwo = document.createElement('h2');
@@ -90,6 +90,8 @@ cheerButton.addEventListener('click', function () {
   body.classList.add('heart-cursor');
   addFive();
   cheerButton.classList.add('hide');
+  const music = document.querySelector('audio');
+  music.play();
 });
 
 //Changing the color of the css variable --rainbow. A color is randomed and applied from the colors array every 2seconds.
