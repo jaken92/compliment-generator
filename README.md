@@ -1,6 +1,6 @@
 # My useless webpage
 
-A simple compliment generator. Playing around with different javascript functions to learn. The result is a pretty useless webpage.
+My first schoolproject in vanilla js. A simple compliment generator. Playing around with different javascript functions to learn. The result is a pretty useless webpage.
 
 # Installation
 
