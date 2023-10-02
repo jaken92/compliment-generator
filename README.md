@@ -1,6 +1,6 @@
 # Compliment Generator
 
-My first schoolproject in vanilla js. A simple compliment generator on the theme "useless-web". Playing around with different javascript functions to learn. I have decided to use this repo to learn about open source etiquette and get familiar with interacting over Github. 
+My first schoolproject in vanilla js. A simple compliment generator on the theme "useless-web". Playing around with different javascript functions to learn. I have decided to use this repo to learn about open source etiquette and get familiar with interacting over Github. I think it is a good starting point for people taking their first steps in the open source-world.
 
 ## Contribute
 If you would like to contribute please check out the Contributor.md and take a look in the issues-tab!
