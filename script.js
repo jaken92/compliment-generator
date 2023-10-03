@@ -78,8 +78,8 @@ function addFive() {
     myList.appendChild(li);
   }
 }
-//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none. Plays audio which is set to loop.
-cheerButton.addEventListener('click', function () {
+
+function cheerButtonClicked() {
   body.classList.add('rainbow');
   const headerPtTwo = document.createElement('h2');
   headerPtTwo.textContent = 'You are:';
@@ -92,16 +92,9 @@ cheerButton.addEventListener('click', function () {
   cheerButton.classList.add('hide');
   const music = document.querySelector('audio');
   music.play();
-});
+}
 
-//Changing the color of the css variable --rainbow. A color is randomed and applied from the colors array every 2seconds.
-const rainbow = window.setInterval(function () {
-  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-  root.style.setProperty('--rainbow', randomColor);
-}, 2000);
-
-//Making the page endlessly scrollable.
-window.addEventListener('scroll', function () {
+function endlessScrollable () {
   const html = document.documentElement;
   //getting the document height, reference: https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
   const documentHeight = Math.max(
@@ -117,10 +110,9 @@ window.addEventListener('scroll', function () {
   if (windowHeight + scrollY >= 0.85 * documentHeight) {
     addFive();
   }
-});
+}
 
-//checking where in the browser each of the listitems are located, if an item is 59% from the top, applying class selected and removing it from the other listitems.
-window.addEventListener('scroll', function () {
+function removeListItems() {
   const windowHeight = window.innerHeight;
   const scrollY = window.scrollY;
   const listItems = document.querySelectorAll('ul li');
@@ -132,4 +124,19 @@ window.addEventListener('scroll', function () {
       listItem.classList.add('selected');
     }
   });
-});
+}
+
+//When button is clicked - Adds the classes rainbow(backgroundcolor) and heart-cursor to body. Creates the 5 initial listitems along with two headers. Hides button by adding class hide containing a display:none. Plays audio which is set to loop.
+cheerButton.addEventListener('click', cheerButtonClicked);
+
+//Changing the color of the css variable --rainbow. A color is randomed and applied from the colors array every 2seconds.
+const rainbow = window.setInterval(function () {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  root.style.setProperty('--rainbow', randomColor);
+}, 2000);
+
+//Making the page endlessly scrollable.
+window.addEventListener('scroll', endlessScrollable);
+
+//checking where in the browser each of the listitems are located, if an item is 59% from the top, applying class selected and removing it from the other listitems.
+window.addEventListener('scroll', removeListItems);
